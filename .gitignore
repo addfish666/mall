@@ -1,0 +1,4 @@
+# 忽略 hm-common 和 hm-service 模块中的 target 目录
+/hm-common/target/
+/hm-service/target/
+/.idea
