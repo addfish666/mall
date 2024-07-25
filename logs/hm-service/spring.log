@@ -1,0 +1,748 @@
+09:37:01:474  INFO 30356 --- [main] com.hmall.HMallApplication               : Starting HMallApplication using Java 11.0.24 on DESKTOP-5K6LLAO with PID 30356 (E:\aspirecn\studydata\day02-Docker\statistic\hmall\hm-service\target\classes started by DELL in E:\aspirecn\studydata\day02-Docker\statistic\hmall)
+09:37:01:536 DEBUG 30356 --- [main] com.hmall.HMallApplication               : Running with Spring Boot v2.7.12, Spring v5.3.27
+09:37:01:537  INFO 30356 --- [main] com.hmall.HMallApplication               : The following 1 profile is active: "local"
+09:37:04:418  INFO 30356 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+09:37:04:423  INFO 30356 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+09:37:04:559  INFO 30356 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 0 Redis repository interfaces.
+09:37:05:771  INFO 30356 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+09:37:05:786  INFO 30356 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+09:37:05:787  INFO 30356 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+09:37:06:148  INFO 30356 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+09:37:06:149  INFO 30356 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4283 ms
+09:37:10:356  INFO 30356 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+09:37:11:583  INFO 30356 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+09:37:11:584  INFO 30356 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+09:37:11:587  INFO 30356 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+09:37:11:629  INFO 30356 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+09:37:11:861  INFO 30356 --- [main] com.hmall.HMallApplication               : Started HMallApplication in 13.169 seconds (JVM running for 18.253)
+09:38:00:348  INFO 30356 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:38:00:350  INFO 30356 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+09:38:00:351  INFO 30356 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+09:38:00:896  INFO 30356 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+09:38:01:829  INFO 30356 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+09:38:01:836 DEBUG 30356 --- [http-nio-8080-exec-1] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+09:38:01:893 DEBUG 30356 --- [http-nio-8080-exec-1] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+09:38:01:923 DEBUG 30356 --- [http-nio-8080-exec-1] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+09:38:25:809 DEBUG 30356 --- [http-nio-8080-exec-2] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+09:38:25:809 DEBUG 30356 --- [http-nio-8080-exec-2] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: Jack(String)
+09:38:25:812 DEBUG 30356 --- [http-nio-8080-exec-2] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+09:38:26:438 DEBUG 30356 --- [http-nio-8080-exec-3] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+09:38:26:438 DEBUG 30356 --- [http-nio-8080-exec-3] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+09:38:26:440 DEBUG 30356 --- [http-nio-8080-exec-3] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+09:38:37:536 DEBUG 30356 --- [http-nio-8080-exec-4] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+09:38:37:536 DEBUG 30356 --- [http-nio-8080-exec-4] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+09:38:38:229 DEBUG 30356 --- [http-nio-8080-exec-4] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+09:38:38:335 DEBUG 30356 --- [http-nio-8080-exec-4] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+09:38:38:335 DEBUG 30356 --- [http-nio-8080-exec-4] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+09:38:40:155 DEBUG 30356 --- [http-nio-8080-exec-4] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+09:38:40:282 ERROR 30356 --- [http-nio-8080-exec-4] c.h.common.advice.CommonExceptionAdvice  : 其他异常 uri : /search/list -> 
+
+org.apache.catalina.connector.ClientAbortException: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:309) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:271) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:118) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.io.FilterOutputStream.flush(FilterOutputStream.java:153) ~[na:na]
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1187) ~[jackson-core-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1009) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:456) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:290) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.handleReturnValue(RequestResponseBodyMethodProcessor.java:183) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:135) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
+	at java.base/sun.nio.ch.SocketDispatcher.write0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51) ~[na:na]
+	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:113) ~[na:na]
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:79) ~[na:na]
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:50) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:466) ~[na:na]
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:136) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1431) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:775) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketWrapperBase.flushBlocking(SocketWrapperBase.java:739) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketWrapperBase.flush(SocketWrapperBase.java:723) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.flush(Http11OutputBuffer.java:566) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.filters.IdentityOutputFilter.flush(IdentityOutputFilter.java:117) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11OutputBuffer.flush(Http11OutputBuffer.java:220) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.flush(Http11Processor.java:1246) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:398) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.Response.action(Response.java:207) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:305) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	... 54 common frames omitted
+
+09:38:40:326  WARN 30356 --- [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler com.hmall.common.advice.CommonExceptionAdvice#handleRuntimeException(Exception)
+
+org.apache.catalina.connector.ClientAbortException: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:309) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:271) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:118) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.io.FilterOutputStream.flush(FilterOutputStream.java:153) ~[na:na]
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1187) ~[jackson-core-2.13.5.jar:2.13.5]
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1009) ~[jackson-databind-2.13.5.jar:2.13.5]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:456) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:290) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:135) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:428) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:75) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:142) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1332) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1143) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
+	at java.base/sun.nio.ch.SocketDispatcher.write0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51) ~[na:na]
+	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:113) ~[na:na]
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:79) ~[na:na]
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:50) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:466) ~[na:na]
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:136) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1431) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:775) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketWrapperBase.flushBlocking(SocketWrapperBase.java:739) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketWrapperBase.flush(SocketWrapperBase.java:723) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.flush(Http11OutputBuffer.java:566) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.filters.IdentityOutputFilter.flush(IdentityOutputFilter.java:117) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11OutputBuffer.flush(Http11OutputBuffer.java:220) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.flush(Http11Processor.java:1246) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:398) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.Response.action(Response.java:207) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:305) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	... 57 common frames omitted
+
+09:38:57:082 DEBUG 30356 --- [http-nio-8080-exec-5] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+09:38:57:082 DEBUG 30356 --- [http-nio-8080-exec-5] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+09:38:57:104 DEBUG 30356 --- [http-nio-8080-exec-5] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+09:38:57:106 DEBUG 30356 --- [http-nio-8080-exec-5] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?,?
+09:38:57:107 DEBUG 30356 --- [http-nio-8080-exec-5] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long), 20(Long)
+09:38:57:231 DEBUG 30356 --- [http-nio-8080-exec-5] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+09:39:06:108 DEBUG 30356 --- [http-nio-8080-exec-6] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+09:39:06:109 DEBUG 30356 --- [http-nio-8080-exec-6] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+09:39:06:128 DEBUG 30356 --- [http-nio-8080-exec-6] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+09:39:06:130 DEBUG 30356 --- [http-nio-8080-exec-6] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?,?
+09:39:06:131 DEBUG 30356 --- [http-nio-8080-exec-6] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 40(Long), 20(Long)
+09:39:06:248 DEBUG 30356 --- [http-nio-8080-exec-6] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+09:39:11:419 DEBUG 30356 --- [http-nio-8080-exec-7] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+09:39:11:420 DEBUG 30356 --- [http-nio-8080-exec-7] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+09:39:11:423 DEBUG 30356 --- [http-nio-8080-exec-7] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+09:39:40:217  INFO 30356 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+09:39:40:240  INFO 30356 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+09:42:13:498  INFO 14788 --- [main] com.hmall.HMallApplication               : Starting HMallApplication using Java 11.0.24 on DESKTOP-5K6LLAO with PID 14788 (E:\aspirecn\studydata\day02-Docker\statistic\hmall\hm-service\target\classes started by DELL in E:\aspirecn\studydata\day02-Docker\statistic\hmall)
+09:42:13:507 DEBUG 14788 --- [main] com.hmall.HMallApplication               : Running with Spring Boot v2.7.12, Spring v5.3.27
+09:42:13:508  INFO 14788 --- [main] com.hmall.HMallApplication               : The following 1 profile is active: "local"
+09:42:15:201  INFO 14788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+09:42:15:204  INFO 14788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+09:42:15:271  INFO 14788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 0 Redis repository interfaces.
+09:42:15:935  INFO 14788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+09:42:15:946  INFO 14788 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+09:42:15:947  INFO 14788 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+09:42:16:208  INFO 14788 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+09:42:16:208  INFO 14788 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2620 ms
+09:42:19:867  INFO 14788 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+09:42:20:905  INFO 14788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+09:42:20:907  INFO 14788 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+09:42:20:911  INFO 14788 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+09:42:20:957  INFO 14788 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+09:42:21:148  INFO 14788 --- [main] com.hmall.HMallApplication               : Started HMallApplication in 8.426 seconds (JVM running for 11.259)
+09:42:48:103  INFO 14788 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:42:48:104  INFO 14788 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+09:42:48:105  INFO 14788 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+09:42:48:569  INFO 14788 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+09:42:49:264  INFO 14788 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+09:42:49:282 DEBUG 14788 --- [http-nio-8080-exec-1] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+09:42:49:327 DEBUG 14788 --- [http-nio-8080-exec-1] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+09:42:49:363 DEBUG 14788 --- [http-nio-8080-exec-1] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+09:42:49:385 DEBUG 14788 --- [http-nio-8080-exec-1] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+09:42:49:386 DEBUG 14788 --- [http-nio-8080-exec-1] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+09:42:49:590 DEBUG 14788 --- [http-nio-8080-exec-1] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+09:50:59:699  INFO 14788 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+09:50:59:725  INFO 14788 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+10:02:10:385  INFO 24196 --- [main] com.hmall.HMallApplication               : Starting HMallApplication using Java 11.0.24 on DESKTOP-5K6LLAO with PID 24196 (E:\aspirecn\studydata\day02-Docker\statistic\hmall\hm-service\target\classes started by DELL in E:\aspirecn\studydata\day02-Docker\statistic\hmall)
+10:02:10:411 DEBUG 24196 --- [main] com.hmall.HMallApplication               : Running with Spring Boot v2.7.12, Spring v5.3.27
+10:02:10:412  INFO 24196 --- [main] com.hmall.HMallApplication               : The following 1 profile is active: "local"
+10:02:11:499  INFO 24196 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+10:02:11:501  INFO 24196 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+10:02:11:565  INFO 24196 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 0 Redis repository interfaces.
+10:02:12:243  INFO 24196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+10:02:12:254  INFO 24196 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+10:02:12:254  INFO 24196 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+10:02:12:512  INFO 24196 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+10:02:12:512  INFO 24196 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2055 ms
+10:02:16:084  INFO 24196 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+10:02:16:475  INFO 24196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+10:02:16:476  INFO 24196 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+10:02:16:478  INFO 24196 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+10:02:16:512  INFO 24196 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+10:02:16:720  INFO 24196 --- [main] com.hmall.HMallApplication               : Started HMallApplication in 6.953 seconds (JVM running for 9.6)
+10:02:28:745  INFO 24196 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:02:28:746  INFO 24196 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+10:02:28:747  INFO 24196 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+10:02:28:891  INFO 24196 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+10:02:29:085  INFO 24196 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+10:02:29:092 DEBUG 24196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+10:02:29:115 DEBUG 24196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+10:02:29:155 DEBUG 24196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+10:02:29:165 DEBUG 24196 --- [http-nio-8080-exec-2] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+10:02:29:165 DEBUG 24196 --- [http-nio-8080-exec-2] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+10:02:29:331 DEBUG 24196 --- [http-nio-8080-exec-2] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+10:03:11:508 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+10:03:11:509 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+10:03:11:513 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+10:03:11:857 DEBUG 24196 --- [http-nio-8080-exec-3] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+10:03:11:858 DEBUG 24196 --- [http-nio-8080-exec-3] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+10:03:11:860 DEBUG 24196 --- [http-nio-8080-exec-3] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+10:04:40:832 DEBUG 24196 --- [http-nio-8080-exec-7] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+10:04:40:833 DEBUG 24196 --- [http-nio-8080-exec-7] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+10:04:40:835 DEBUG 24196 --- [http-nio-8080-exec-7] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+10:04:41:087 DEBUG 24196 --- [http-nio-8080-exec-6] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+10:04:41:088 DEBUG 24196 --- [http-nio-8080-exec-6] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+10:04:41:089 DEBUG 24196 --- [http-nio-8080-exec-6] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+10:13:09:452 DEBUG 24196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+10:13:09:452 DEBUG 24196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+10:13:09:470 DEBUG 24196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+10:13:09:472 DEBUG 24196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+10:13:09:472 DEBUG 24196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+10:13:09:593 DEBUG 24196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+10:13:16:098 DEBUG 24196 --- [http-nio-8080-exec-9] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND status = ?)
+10:13:16:098 DEBUG 24196 --- [http-nio-8080-exec-9] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 华为(String), 1(Integer)
+10:13:16:178 DEBUG 24196 --- [http-nio-8080-exec-9] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+10:13:16:180 DEBUG 24196 --- [http-nio-8080-exec-9] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+10:13:16:181 DEBUG 24196 --- [http-nio-8080-exec-9] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 华为(String), 1(Integer), 20(Long)
+10:13:16:299 DEBUG 24196 --- [http-nio-8080-exec-9] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+10:13:55:361 DEBUG 24196 --- [http-nio-8080-exec-10] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND status = ? AND price BETWEEN ? AND ?)
+10:13:55:362 DEBUG 24196 --- [http-nio-8080-exec-10] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 华为(String), 1(Integer), 10000(Integer), 29900(Integer)
+10:13:55:448 DEBUG 24196 --- [http-nio-8080-exec-10] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+10:13:55:450 DEBUG 24196 --- [http-nio-8080-exec-10] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND status = ? AND price BETWEEN ? AND ?) ORDER BY update_time DESC LIMIT ?
+10:13:55:451 DEBUG 24196 --- [http-nio-8080-exec-10] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 华为(String), 1(Integer), 10000(Integer), 29900(Integer), 20(Long)
+10:13:55:575 DEBUG 24196 --- [http-nio-8080-exec-10] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+10:13:58:274 DEBUG 24196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND status = ?)
+10:13:58:275 DEBUG 24196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 华为(String), 1(Integer)
+10:13:58:352 DEBUG 24196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+10:13:58:353 DEBUG 24196 --- [http-nio-8080-exec-2] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+10:13:58:354 DEBUG 24196 --- [http-nio-8080-exec-2] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 华为(String), 1(Integer), 20(Long)
+10:13:58:461 DEBUG 24196 --- [http-nio-8080-exec-2] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+10:14:00:130 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.selectCount  : ==>  Preparing: SELECT COUNT( * ) FROM cart WHERE (user_id = ? AND item_id = ?)
+10:14:00:130 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.selectCount  : ==> Parameters: 1(Long), 100002624512(Long)
+10:14:00:131 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.selectCount  : <==      Total: 1
+10:14:00:133 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.selectCount  : ==>  Preparing: SELECT COUNT( * ) FROM cart WHERE (user_id = ?)
+10:14:00:133 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.selectCount  : ==> Parameters: 1(Long)
+10:14:00:136 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.selectCount  : <==      Total: 1
+10:14:00:139 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.insert       : ==>  Preparing: INSERT INTO cart ( user_id, item_id, name, spec, price, image ) VALUES ( ?, ?, ?, ?, ?, ? )
+10:14:00:139 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.insert       : ==> Parameters: 1(Long), 100002624512(Long), 【千玺代言】华为新品 HUAWEI nova 4 极点全面屏手机 2000万超广角三摄 8GB+128GB 蜜语红 全网通双卡双待(String), {"颜色": "红色"}(String), 90600(Integer), https://m.360buyimg.com/mobilecms/s720x720_jfs/t1/20085/14/1076/149604/5c0f8dd2Ebafd3bfd/0cb34a7826cbe1c3.jpg!q70.jpg.webp(String)
+10:14:00:145 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.insert       : <==    Updates: 1
+10:14:00:330 DEBUG 24196 --- [http-nio-8080-exec-3] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+10:14:00:330 DEBUG 24196 --- [http-nio-8080-exec-3] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+10:14:00:332 DEBUG 24196 --- [http-nio-8080-exec-3] com.hmall.mapper.CartMapper.selectList   : <==      Total: 1
+10:14:00:336 DEBUG 24196 --- [http-nio-8080-exec-3] c.h.mapper.ItemMapper.selectBatchIds     : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? )
+10:14:00:337 DEBUG 24196 --- [http-nio-8080-exec-3] c.h.mapper.ItemMapper.selectBatchIds     : ==> Parameters: 100002624512(Long)
+10:14:00:341 DEBUG 24196 --- [http-nio-8080-exec-3] c.h.mapper.ItemMapper.selectBatchIds     : <==      Total: 1
+10:14:09:197 DEBUG 24196 --- [http-nio-8080-exec-4] com.hmall.mapper.CartMapper.updateById   : ==>  Preparing: UPDATE cart SET num=? WHERE id=?
+10:14:09:198 DEBUG 24196 --- [http-nio-8080-exec-4] com.hmall.mapper.CartMapper.updateById   : ==> Parameters: 2(Integer), 7(Long)
+10:14:09:201 DEBUG 24196 --- [http-nio-8080-exec-4] com.hmall.mapper.CartMapper.updateById   : <==    Updates: 1
+10:14:09:209 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+10:14:09:210 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+10:14:09:212 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.CartMapper.selectList   : <==      Total: 1
+10:14:09:213 DEBUG 24196 --- [http-nio-8080-exec-5] c.h.mapper.ItemMapper.selectBatchIds     : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? )
+10:14:09:213 DEBUG 24196 --- [http-nio-8080-exec-5] c.h.mapper.ItemMapper.selectBatchIds     : ==> Parameters: 100002624512(Long)
+10:14:09:215 DEBUG 24196 --- [http-nio-8080-exec-5] c.h.mapper.ItemMapper.selectBatchIds     : <==      Total: 1
+10:14:11:031 DEBUG 24196 --- [http-nio-8080-exec-7] com.hmall.mapper.CartMapper.updateById   : ==>  Preparing: UPDATE cart SET num=? WHERE id=?
+10:14:11:032 DEBUG 24196 --- [http-nio-8080-exec-7] com.hmall.mapper.CartMapper.updateById   : ==> Parameters: 1(Integer), 7(Long)
+10:14:11:060 DEBUG 24196 --- [http-nio-8080-exec-7] com.hmall.mapper.CartMapper.updateById   : <==    Updates: 1
+10:14:11:091 DEBUG 24196 --- [http-nio-8080-exec-6] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+10:14:11:091 DEBUG 24196 --- [http-nio-8080-exec-6] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+10:14:11:093 DEBUG 24196 --- [http-nio-8080-exec-6] com.hmall.mapper.CartMapper.selectList   : <==      Total: 1
+10:14:11:093 DEBUG 24196 --- [http-nio-8080-exec-6] c.h.mapper.ItemMapper.selectBatchIds     : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? )
+10:14:11:093 DEBUG 24196 --- [http-nio-8080-exec-6] c.h.mapper.ItemMapper.selectBatchIds     : ==> Parameters: 100002624512(Long)
+10:14:11:095 DEBUG 24196 --- [http-nio-8080-exec-6] c.h.mapper.ItemMapper.selectBatchIds     : <==      Total: 1
+10:14:23:631 DEBUG 24196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+10:14:23:631 DEBUG 24196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+10:14:23:649 DEBUG 24196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+10:14:23:650 DEBUG 24196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+10:14:23:650 DEBUG 24196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+10:14:23:765 DEBUG 24196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+10:14:25:268 DEBUG 24196 --- [http-nio-8080-exec-9] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (category = ? AND status = ?)
+10:14:25:269 DEBUG 24196 --- [http-nio-8080-exec-9] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 硬盘(String), 1(Integer)
+10:14:25:348 DEBUG 24196 --- [http-nio-8080-exec-9] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+10:14:25:349 DEBUG 24196 --- [http-nio-8080-exec-9] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (category = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+10:14:25:350 DEBUG 24196 --- [http-nio-8080-exec-9] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 硬盘(String), 1(Integer), 20(Long)
+10:14:25:502 DEBUG 24196 --- [http-nio-8080-exec-9] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+10:14:28:391 DEBUG 24196 --- [http-nio-8080-exec-10] com.hmall.mapper.CartMapper.selectCount  : ==>  Preparing: SELECT COUNT( * ) FROM cart WHERE (user_id = ? AND item_id = ?)
+10:14:28:391 DEBUG 24196 --- [http-nio-8080-exec-10] com.hmall.mapper.CartMapper.selectCount  : ==> Parameters: 1(Long), 3727807(Long)
+10:14:28:393 DEBUG 24196 --- [http-nio-8080-exec-10] com.hmall.mapper.CartMapper.selectCount  : <==      Total: 1
+10:14:28:394 DEBUG 24196 --- [http-nio-8080-exec-10] com.hmall.mapper.CartMapper.selectCount  : ==>  Preparing: SELECT COUNT( * ) FROM cart WHERE (user_id = ?)
+10:14:28:394 DEBUG 24196 --- [http-nio-8080-exec-10] com.hmall.mapper.CartMapper.selectCount  : ==> Parameters: 1(Long)
+10:14:28:395 DEBUG 24196 --- [http-nio-8080-exec-10] com.hmall.mapper.CartMapper.selectCount  : <==      Total: 1
+10:14:28:396 DEBUG 24196 --- [http-nio-8080-exec-10] com.hmall.mapper.CartMapper.insert       : ==>  Preparing: INSERT INTO cart ( user_id, item_id, name, spec, price, image ) VALUES ( ?, ?, ?, ?, ?, ? )
+10:14:28:396 DEBUG 24196 --- [http-nio-8080-exec-10] com.hmall.mapper.CartMapper.insert       : ==> Parameters: 1(Long), 3727807(Long), 希捷(SEAGATE)V5系列 1TB 7200转128M SAS 企业级硬盘（ST1000NM0045）(String), {"颜色": "V5", "版本": "SAS", "容量": "1TB"}(String), 71500(Integer), https://m.360buyimg.com/mobilecms/s720x720_jfs/t1/9813/8/10604/271603/5c230be9E0e6f1184/eb6f8e0f95dff0c7.jpg!q70.jpg.webp(String)
+10:14:28:399 DEBUG 24196 --- [http-nio-8080-exec-10] com.hmall.mapper.CartMapper.insert       : <==    Updates: 1
+10:14:28:442 DEBUG 24196 --- [http-nio-8080-exec-2] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+10:14:28:443 DEBUG 24196 --- [http-nio-8080-exec-2] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+10:14:28:445 DEBUG 24196 --- [http-nio-8080-exec-2] com.hmall.mapper.CartMapper.selectList   : <==      Total: 2
+10:14:28:445 DEBUG 24196 --- [http-nio-8080-exec-2] c.h.mapper.ItemMapper.selectBatchIds     : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? )
+10:14:28:446 DEBUG 24196 --- [http-nio-8080-exec-2] c.h.mapper.ItemMapper.selectBatchIds     : ==> Parameters: 3727807(Long), 100002624512(Long)
+10:14:28:448 DEBUG 24196 --- [http-nio-8080-exec-2] c.h.mapper.ItemMapper.selectBatchIds     : <==      Total: 2
+10:14:58:514 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.selectCount  : ==>  Preparing: SELECT COUNT( * ) FROM cart WHERE (user_id = ? AND item_id = ?)
+10:14:58:514 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.selectCount  : ==> Parameters: 1(Long), 100002580226(Long)
+10:14:58:516 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.selectCount  : <==      Total: 1
+10:14:58:517 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.selectCount  : ==>  Preparing: SELECT COUNT( * ) FROM cart WHERE (user_id = ?)
+10:14:58:517 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.selectCount  : ==> Parameters: 1(Long)
+10:14:58:518 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.selectCount  : <==      Total: 1
+10:14:58:520 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.insert       : ==>  Preparing: INSERT INTO cart ( user_id, item_id, name, spec, price, image ) VALUES ( ?, ?, ?, ?, ?, ? )
+10:14:58:520 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.insert       : ==> Parameters: 1(Long), 100002580226(Long), NAS存储解决方案 (WD红盘10TB NAS硬盘 + 群晖 四盘位 NAS网络存储)(String), {}(String), 23900(Integer), https://m.360buyimg.com/mobilecms/s720x720_jfs/t1/12287/36/2416/140397/5c1cc51bEfd1abd11/9a2c77f64f51423d.jpg!q70.jpg.webp(String)
+10:14:58:524 DEBUG 24196 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.insert       : <==    Updates: 1
+10:14:58:611 DEBUG 24196 --- [http-nio-8080-exec-3] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+10:14:58:612 DEBUG 24196 --- [http-nio-8080-exec-3] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+10:14:58:614 DEBUG 24196 --- [http-nio-8080-exec-3] com.hmall.mapper.CartMapper.selectList   : <==      Total: 3
+10:14:58:615 DEBUG 24196 --- [http-nio-8080-exec-3] c.h.mapper.ItemMapper.selectBatchIds     : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? , ? )
+10:14:58:616 DEBUG 24196 --- [http-nio-8080-exec-3] c.h.mapper.ItemMapper.selectBatchIds     : ==> Parameters: 3727807(Long), 100002624512(Long), 100002580226(Long)
+10:14:58:618 DEBUG 24196 --- [http-nio-8080-exec-3] c.h.mapper.ItemMapper.selectBatchIds     : <==      Total: 3
+10:22:01:669 DEBUG 24196 --- [http-nio-8080-exec-4] c.hmall.mapper.AddressMapper.selectList  : ==>  Preparing: SELECT id,user_id,province,city,town,mobile,street,contact,is_default,notes FROM address WHERE (user_id = ?)
+10:22:01:669 DEBUG 24196 --- [http-nio-8080-exec-4] c.hmall.mapper.AddressMapper.selectList  : ==> Parameters: 1(Long)
+10:22:01:671 DEBUG 24196 --- [http-nio-8080-exec-4] c.hmall.mapper.AddressMapper.selectList  : <==      Total: 4
+10:22:32:648 DEBUG 24196 --- [http-nio-8080-exec-5] c.h.mapper.ItemMapper.selectBatchIds     : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? , ? , ? )
+10:22:32:649 DEBUG 24196 --- [http-nio-8080-exec-5] c.h.mapper.ItemMapper.selectBatchIds     : ==> Parameters: 3727807(Long), 100002624512(Long), 100002580226(Long)
+10:22:32:650 DEBUG 24196 --- [http-nio-8080-exec-5] c.h.mapper.ItemMapper.selectBatchIds     : <==      Total: 3
+10:22:32:653 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.OrderMapper.insert      : ==>  Preparing: INSERT INTO `order` ( id, total_fee, payment_type, user_id, status ) VALUES ( ?, ?, ?, ?, ? )
+10:22:32:654 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.OrderMapper.insert      : ==> Parameters: 1816297956426338305(Long), 186000(Integer), 3(Integer), 1(Long), 1(Integer)
+10:22:32:657 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.OrderMapper.insert      : <==    Updates: 1
+10:22:32:670 DEBUG 24196 --- [http-nio-8080-exec-5] c.hmall.mapper.OrderDetailMapper.insert  : ==>  Preparing: INSERT INTO order_detail ( order_id, item_id, num, name, spec, price, image ) VALUES ( ?, ?, ?, ?, ?, ?, ? )
+10:22:32:671 DEBUG 24196 --- [http-nio-8080-exec-5] c.hmall.mapper.OrderDetailMapper.insert  : ==> Parameters: 1816297956426338305(Long), 3727807(Long), 1(Integer), 希捷(SEAGATE)V5系列 1TB 7200转128M SAS 企业级硬盘（ST1000NM0045）(String), {"颜色": "V5", "版本": "SAS", "容量": "1TB"}(String), 71500(Integer), https://m.360buyimg.com/mobilecms/s720x720_jfs/t1/9813/8/10604/271603/5c230be9E0e6f1184/eb6f8e0f95dff0c7.jpg!q70.jpg.webp(String)
+10:22:32:671 DEBUG 24196 --- [http-nio-8080-exec-5] c.hmall.mapper.OrderDetailMapper.insert  : ==> Parameters: 1816297956426338305(Long), 100002580226(Long), 1(Integer), NAS存储解决方案 (WD红盘10TB NAS硬盘 + 群晖 四盘位 NAS网络存储)(String), {}(String), 23900(Integer), https://m.360buyimg.com/mobilecms/s720x720_jfs/t1/12287/36/2416/140397/5c1cc51bEfd1abd11/9a2c77f64f51423d.jpg!q70.jpg.webp(String)
+10:22:32:672 DEBUG 24196 --- [http-nio-8080-exec-5] c.hmall.mapper.OrderDetailMapper.insert  : ==> Parameters: 1816297956426338305(Long), 100002624512(Long), 1(Integer), 【千玺代言】华为新品 HUAWEI nova 4 极点全面屏手机 2000万超广角三摄 8GB+128GB 蜜语红 全网通双卡双待(String), {"颜色": "红色"}(String), 90600(Integer), https://m.360buyimg.com/mobilecms/s720x720_jfs/t1/20085/14/1076/149604/5c0f8dd2Ebafd3bfd/0cb34a7826cbe1c3.jpg!q70.jpg.webp(String)
+10:22:32:679 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.CartMapper.delete       : ==>  Preparing: DELETE FROM cart WHERE (user_id = ? AND item_id IN (?,?,?))
+10:22:32:680 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.CartMapper.delete       : ==> Parameters: 1(Long), 3727807(Long), 100002624512(Long), 100002580226(Long)
+10:22:32:681 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.CartMapper.delete       : <==    Updates: 3
+10:22:32:682 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.ItemMapper.updateStock  : ==>  Preparing: UPDATE item SET stock = stock - ? WHERE id = ?
+10:22:32:682 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.ItemMapper.updateStock  : ==> Parameters: 1(Integer), 3727807(Long)
+10:22:32:683 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.ItemMapper.updateStock  : ==> Parameters: 1(Integer), 100002580226(Long)
+10:22:32:683 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.ItemMapper.updateStock  : ==> Parameters: 1(Integer), 100002624512(Long)
+10:22:32:854 DEBUG 24196 --- [http-nio-8080-exec-7] com.hmall.mapper.OrderMapper.selectById  : ==>  Preparing: SELECT id,total_fee,payment_type,user_id,status,create_time,pay_time,consign_time,end_time,close_time,comment_time,update_time FROM `order` WHERE id=?
+10:22:32:854 DEBUG 24196 --- [http-nio-8080-exec-7] com.hmall.mapper.OrderMapper.selectById  : ==> Parameters: 1816297956426338305(Long)
+10:22:32:855 DEBUG 24196 --- [http-nio-8080-exec-7] com.hmall.mapper.OrderMapper.selectById  : <==      Total: 1
+10:22:32:914 DEBUG 24196 --- [http-nio-8080-exec-6] c.hmall.mapper.PayOrderMapper.selectOne  : ==>  Preparing: SELECT id,biz_order_no,pay_order_no,biz_user_id,pay_channel_code,amount,pay_type,status,expand_json,result_code,result_msg,pay_success_time,pay_over_time,qr_code_url,create_time,update_time,creater,updater,is_delete FROM pay_order WHERE (biz_order_no = ?)
+10:22:32:914 DEBUG 24196 --- [http-nio-8080-exec-6] c.hmall.mapper.PayOrderMapper.selectOne  : ==> Parameters: 1816297956426338305(Long)
+10:22:32:945 DEBUG 24196 --- [http-nio-8080-exec-6] c.hmall.mapper.PayOrderMapper.selectOne  : <==      Total: 0
+10:22:32:959 DEBUG 24196 --- [http-nio-8080-exec-6] com.hmall.mapper.PayOrderMapper.insert   : ==>  Preparing: INSERT INTO pay_order ( id, biz_order_no, pay_order_no, biz_user_id, pay_channel_code, amount, pay_type, status, pay_over_time ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ? )
+10:22:32:965 DEBUG 24196 --- [http-nio-8080-exec-6] com.hmall.mapper.PayOrderMapper.insert   : ==> Parameters: 1816297957693018115(Long), 1816297956426338305(Long), 1816297957693018114(Long), 1(Long), balance(String), 186000(Integer), 5(Integer), 1(Integer), 2024-07-25T12:22:32.946392200(LocalDateTime)
+10:22:32:969 DEBUG 24196 --- [http-nio-8080-exec-6] com.hmall.mapper.PayOrderMapper.insert   : <==    Updates: 1
+10:23:32:864 ERROR 24196 --- [http-nio-8080-exec-8] c.h.common.advice.CommonExceptionAdvice  : 自定义异常 -> com.hmall.common.exception.BizIllegalException , 异常原因：抱歉，目前只支持余额支付  
+10:23:32:868 DEBUG 24196 --- [http-nio-8080-exec-8] c.h.common.advice.CommonExceptionAdvice  : 
+
+com.hmall.common.exception.BizIllegalException: 抱歉，目前只支持余额支付
+	at com.hmall.controller.PayController.applyPayOrder(PayController.java:27) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+10:23:34:737 DEBUG 24196 --- [http-nio-8080-exec-9] c.hmall.mapper.PayOrderMapper.selectOne  : ==>  Preparing: SELECT id,biz_order_no,pay_order_no,biz_user_id,pay_channel_code,amount,pay_type,status,expand_json,result_code,result_msg,pay_success_time,pay_over_time,qr_code_url,create_time,update_time,creater,updater,is_delete FROM pay_order WHERE (biz_order_no = ?)
+10:23:34:737 DEBUG 24196 --- [http-nio-8080-exec-9] c.hmall.mapper.PayOrderMapper.selectOne  : ==> Parameters: 1816297956426338305(Long)
+10:23:34:761 DEBUG 24196 --- [http-nio-8080-exec-9] c.hmall.mapper.PayOrderMapper.selectOne  : <==      Total: 1
+10:23:35:556 ERROR 24196 --- [http-nio-8080-exec-10] c.h.common.advice.CommonExceptionAdvice  : 自定义异常 -> com.hmall.common.exception.BizIllegalException , 异常原因：抱歉，目前只支持余额支付  
+10:23:35:557 DEBUG 24196 --- [http-nio-8080-exec-10] c.h.common.advice.CommonExceptionAdvice  : 
+
+com.hmall.common.exception.BizIllegalException: 抱歉，目前只支持余额支付
+	at com.hmall.controller.PayController.applyPayOrder(PayController.java:27) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+10:23:37:143 DEBUG 24196 --- [http-nio-8080-exec-2] c.hmall.mapper.PayOrderMapper.selectOne  : ==>  Preparing: SELECT id,biz_order_no,pay_order_no,biz_user_id,pay_channel_code,amount,pay_type,status,expand_json,result_code,result_msg,pay_success_time,pay_over_time,qr_code_url,create_time,update_time,creater,updater,is_delete FROM pay_order WHERE (biz_order_no = ?)
+10:23:37:143 DEBUG 24196 --- [http-nio-8080-exec-2] c.hmall.mapper.PayOrderMapper.selectOne  : ==> Parameters: 1816297956426338305(Long)
+10:23:37:144 DEBUG 24196 --- [http-nio-8080-exec-2] c.hmall.mapper.PayOrderMapper.selectOne  : <==      Total: 1
+10:23:46:694 ERROR 24196 --- [http-nio-8080-exec-1] c.h.common.advice.CommonExceptionAdvice  : 自定义异常 -> com.hmall.common.exception.BizIllegalException , 异常原因：抱歉，目前只支持余额支付  
+10:23:46:695 DEBUG 24196 --- [http-nio-8080-exec-1] c.h.common.advice.CommonExceptionAdvice  : 
+
+com.hmall.common.exception.BizIllegalException: 抱歉，目前只支持余额支付
+	at com.hmall.controller.PayController.applyPayOrder(PayController.java:27) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+10:24:02:924 ERROR 24196 --- [http-nio-8080-exec-3] c.h.common.advice.CommonExceptionAdvice  : 自定义异常 -> com.hmall.common.exception.BizIllegalException , 异常原因：抱歉，目前只支持余额支付  
+10:24:02:924 DEBUG 24196 --- [http-nio-8080-exec-3] c.h.common.advice.CommonExceptionAdvice  : 
+
+com.hmall.common.exception.BizIllegalException: 抱歉，目前只支持余额支付
+	at com.hmall.controller.PayController.applyPayOrder(PayController.java:27) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+10:24:27:801 DEBUG 24196 --- [http-nio-8080-exec-4] c.hmall.mapper.PayOrderMapper.selectOne  : ==>  Preparing: SELECT id,biz_order_no,pay_order_no,biz_user_id,pay_channel_code,amount,pay_type,status,expand_json,result_code,result_msg,pay_success_time,pay_over_time,qr_code_url,create_time,update_time,creater,updater,is_delete FROM pay_order WHERE (biz_order_no = ?)
+10:24:27:802 DEBUG 24196 --- [http-nio-8080-exec-4] c.hmall.mapper.PayOrderMapper.selectOne  : ==> Parameters: 1816297956426338305(Long)
+10:24:27:803 DEBUG 24196 --- [http-nio-8080-exec-4] c.hmall.mapper.PayOrderMapper.selectOne  : <==      Total: 1
+10:24:34:935 DEBUG 24196 --- [http-nio-8080-exec-5] c.h.mapper.PayOrderMapper.selectById     : ==>  Preparing: SELECT id,biz_order_no,pay_order_no,biz_user_id,pay_channel_code,amount,pay_type,status,expand_json,result_code,result_msg,pay_success_time,pay_over_time,qr_code_url,create_time,update_time,creater,updater,is_delete FROM pay_order WHERE id=?
+10:24:34:936 DEBUG 24196 --- [http-nio-8080-exec-5] c.h.mapper.PayOrderMapper.selectById     : ==> Parameters: 1816297957693018115(Long)
+10:24:34:937 DEBUG 24196 --- [http-nio-8080-exec-5] c.h.mapper.PayOrderMapper.selectById     : <==      Total: 1
+10:24:34:938  INFO 24196 --- [http-nio-8080-exec-5] com.hmall.service.impl.UserServiceImpl   : 开始扣款
+10:24:34:938 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.UserMapper.selectById   : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE id=?
+10:24:34:938 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.UserMapper.selectById   : ==> Parameters: 1(Long)
+10:24:34:940 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.UserMapper.selectById   : <==      Total: 1
+10:24:35:015 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.UserMapper.updateMoney  : ==>  Preparing: update user set balance = balance - 186000 where id = ?
+10:24:35:015 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.UserMapper.updateMoney  : ==> Parameters: 1(Long)
+10:24:35:017 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.UserMapper.updateMoney  : <==    Updates: 1
+10:24:35:017  INFO 24196 --- [http-nio-8080-exec-5] com.hmall.service.impl.UserServiceImpl   : 扣款成功
+10:24:35:021 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.PayOrderMapper.update   : ==>  Preparing: UPDATE pay_order SET status=?,pay_success_time=? WHERE (id = ? AND status IN (?,?))
+10:24:35:022 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.PayOrderMapper.update   : ==> Parameters: 3(Integer), 2024-07-25T10:24:35.017475600(LocalDateTime), 1816297957693018115(Long), 0(Integer), 1(Integer)
+10:24:35:024 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.PayOrderMapper.update   : <==    Updates: 1
+10:24:35:026 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.OrderMapper.updateById  : ==>  Preparing: UPDATE `order` SET status=?, pay_time=? WHERE id=?
+10:24:35:026 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.OrderMapper.updateById  : ==> Parameters: 2(Integer), 2024-07-25T10:24:35.024459200(LocalDateTime), 1816297956426338305(Long)
+10:24:35:028 DEBUG 24196 --- [http-nio-8080-exec-5] com.hmall.mapper.OrderMapper.updateById  : <==    Updates: 1
+10:24:35:201 DEBUG 24196 --- [http-nio-8080-exec-7] com.hmall.mapper.OrderMapper.selectById  : ==>  Preparing: SELECT id,total_fee,payment_type,user_id,status,create_time,pay_time,consign_time,end_time,close_time,comment_time,update_time FROM `order` WHERE id=?
+10:24:35:201 DEBUG 24196 --- [http-nio-8080-exec-7] com.hmall.mapper.OrderMapper.selectById  : ==> Parameters: 1816297956426338305(Long)
+10:24:35:203 DEBUG 24196 --- [http-nio-8080-exec-7] com.hmall.mapper.OrderMapper.selectById  : <==      Total: 1
+10:48:47:040 ERROR 24196 --- [http-nio-8080-exec-6] c.h.common.advice.CommonExceptionAdvice  : 自定义异常 -> com.hmall.common.exception.UnauthorizedException , 异常原因：token已经过期  
+10:48:47:043 DEBUG 24196 --- [http-nio-8080-exec-6] c.h.common.advice.CommonExceptionAdvice  : 
+
+com.hmall.common.exception.UnauthorizedException: token已经过期
+	at com.hmall.utils.JwtTool.parseToken(JwtTool.java:65) ~[classes/:na]
+	at com.hmall.interceptor.LoginInterceptor.preHandle(LoginInterceptor.java:21) ~[classes/:na]
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:148) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+10:48:52:828 DEBUG 24196 --- [http-nio-8080-exec-8] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+10:48:52:828 DEBUG 24196 --- [http-nio-8080-exec-8] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+10:48:52:833 DEBUG 24196 --- [http-nio-8080-exec-8] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+10:48:53:240 DEBUG 24196 --- [http-nio-8080-exec-9] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+10:48:53:240 DEBUG 24196 --- [http-nio-8080-exec-9] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+10:48:53:244 DEBUG 24196 --- [http-nio-8080-exec-9] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+10:48:55:096 DEBUG 24196 --- [http-nio-8080-exec-10] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+10:48:55:097 DEBUG 24196 --- [http-nio-8080-exec-10] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+10:48:55:100 DEBUG 24196 --- [http-nio-8080-exec-10] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+10:48:59:410 DEBUG 24196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+10:48:59:410 DEBUG 24196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+10:48:59:434 DEBUG 24196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+10:48:59:435 DEBUG 24196 --- [http-nio-8080-exec-2] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+10:48:59:435 DEBUG 24196 --- [http-nio-8080-exec-2] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+10:48:59:438 DEBUG 24196 --- [http-nio-8080-exec-2] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+11:10:39:375  INFO 24196 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+11:10:39:394  INFO 24196 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+14:03:31:839  INFO 23480 --- [main] com.hmall.HMallApplication               : Starting HMallApplication using Java 11.0.24 on DESKTOP-5K6LLAO with PID 23480 (E:\aspirecn\studydata\day02-Docker\statistic\hmall\hm-service\target\classes started by DELL in E:\aspirecn\studydata\day02-Docker\statistic\hmall)
+14:03:31:992 DEBUG 23480 --- [main] com.hmall.HMallApplication               : Running with Spring Boot v2.7.12, Spring v5.3.27
+14:03:31:993  INFO 23480 --- [main] com.hmall.HMallApplication               : The following 1 profile is active: "local"
+14:03:34:309  INFO 23480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+14:03:34:314  INFO 23480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+14:03:34:463  INFO 23480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 0 Redis repository interfaces.
+14:03:35:546  INFO 23480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+14:03:35:559  INFO 23480 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+14:03:35:560  INFO 23480 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+14:03:35:895  INFO 23480 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+14:03:35:895  INFO 23480 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3825 ms
+14:03:40:215  INFO 23480 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+14:03:41:297  INFO 23480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+14:03:41:298  INFO 23480 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+14:03:41:301  INFO 23480 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+14:03:41:332  INFO 23480 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+14:03:41:539  INFO 23480 --- [main] com.hmall.HMallApplication               : Started HMallApplication in 10.367 seconds (JVM running for 13.358)
