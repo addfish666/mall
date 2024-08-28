@@ -55,4 +55,11 @@ public class PayController {
         PayOrder payOrder = payOrderService.lambdaQuery().eq(PayOrder::getBizOrderNo, id).one();
         return BeanUtils.copyBean(payOrder, PayOrderDTO.class);
     }
+
+    @ApiOperation("修改支付单状态")
+    @GetMapping("/status/{id}/{status}")
+    public void updatePayOrderStatusByBizOrderNo(@PathVariable("id") Long orderId,
+                                                 @PathVariable("status") Integer status){
+        payOrderService.updateStatusByOrderId(orderId, status);
+    }
 }

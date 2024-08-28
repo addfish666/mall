@@ -14,6 +14,12 @@ public class PayClientFallback implements FallbackFactory<PayClient> {
             public PayOrderDTO queryPayOrderByBizOrderNo(Long id) {
                 return null;
             }
+
+            @Override
+            public void updatePayOrderStatusByBizOrderNo(Long orderId, Integer status) {
+                log.error("修改支付单状态失败！", cause);
+                throw new RuntimeException(cause);
+            }
         };
     }
 }

@@ -2,9 +2,11 @@ package com.hmall.trade.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hmall.api.client.ItemClient;
+import com.hmall.api.client.PayClient;
 import com.hmall.api.dto.ItemDTO;
 import com.hmall.api.dto.OrderDetailDTO;
 import com.hmall.common.exception.BadRequestException;
+import com.hmall.common.utils.BeanUtils;
 import com.hmall.common.utils.UserContext;
 import com.hmall.trade.constants.MQConstants;
 import com.hmall.trade.domain.dto.OrderFormDTO;
@@ -43,6 +45,7 @@ import java.util.stream.Collectors;
 public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements IOrderService {
 
     private final ItemClient itemClient;
+    private final PayClient payClient;
     private final IOrderDetailService detailService;
 //    private final CartClient cartClient;
     private final RabbitTemplate rabbitTemplate;
@@ -128,9 +131,17 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
     @Override
     public void cancelOrder(Long orderId) {
-        // TODO 标记订单为已关闭
-
-        // TODO 恢复库存
+        // 1.修改交易订单状态为已关闭
+        lambdaUpdate()
+                .set(Order::getStatus, 5)
+                .eq(Order::getId, orderId)
+                .update();
+        // 2.修改支付单状态为已取消
+        payClient.updatePayOrderStatusByBizOrderNo(orderId, 5);
+        // 3.恢复订单中已经扣减的库存
+        List<OrderDetail> list = detailService.lambdaQuery().eq(OrderDetail::getOrderId, orderId).list();
+        List<OrderDetailDTO> orderDetailDTOS = BeanUtils.copyToList(list, OrderDetailDTO.class);
+        itemClient.restoreStock(orderDetailDTOS);
     }
 
     private List<OrderDetail> buildDetails(Long orderId, List<ItemDTO> items, Map<Long, Integer> numMap) {

@@ -90,7 +90,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     private void handleCartItems(List<CartVO> vos) {
         //TODO 1.获取商品id
         Set<Long> itemIds = vos.stream().map(CartVO::getItemId).collect(Collectors.toSet());
-        // 2.查询商品
+        // 2.查询商品(远程调用方式)
         List<ItemDTO> items = itemClient.queryItemByIds(itemIds);
         /*// 2.1.根据服务名称获取服务的实例列表
         List<ServiceInstance> instances = discoveryClient.getInstances("item-service");

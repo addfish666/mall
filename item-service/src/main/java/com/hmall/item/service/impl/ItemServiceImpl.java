@@ -43,4 +43,18 @@ public class ItemServiceImpl extends ServiceImpl<ItemMapper, Item> implements II
     public List<ItemDTO> queryItemByIds(Collection<Long> ids) {
         return BeanUtils.copyList(listByIds(ids), ItemDTO.class);
     }
+
+    @Override
+    @Transactional
+    public void restoreStock(List<OrderDetailDTO> orderDetails) {
+        for(OrderDetailDTO orderDetail : orderDetails) {
+            // 1.根据商品id查询商品
+            Item item = lambdaQuery().eq(Item::getId, orderDetail.getItemId()).one();
+            // 2.还原库存
+            lambdaUpdate()
+                    .set(Item::getStock, item.getStock() + orderDetail.getNum())
+                    .eq(Item::getId, orderDetail.getItemId())
+                    .update();
+        }
+    }
 }

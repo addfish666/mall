@@ -1,0 +1,15 @@
+server:
+  port: 8086
+hm:
+  db:
+    database: hm-item # 搜索服务有自己的数据库吗？
+  swagger:
+    title: "黑马商城商品服务接口文档"
+    package: com.hmall.search.controller
+spring:
+  rabbitmq:
+    host: 192.168.189.129 # 你的虚拟机IP
+    port: 5672 # 端口
+    virtual-host: /hmall # 虚拟主机
+    username: hmall # 用户名
+    password: 123 # 密码

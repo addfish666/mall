@@ -15,4 +15,8 @@ public interface PayClient {
      */
     @GetMapping("/pay-orders/biz/{id}")
     PayOrderDTO queryPayOrderByBizOrderNo(@PathVariable("id") Long id);
+
+    @GetMapping("/pay-orders/status/{id}/{status}")
+    void updatePayOrderStatusByBizOrderNo(@PathVariable("id") Long orderId,
+                                                 @PathVariable("status") Integer status);
 }
